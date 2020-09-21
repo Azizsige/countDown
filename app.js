@@ -7,12 +7,11 @@ const input = document.getElementById('input')
 const button = document.getElementById('button');
 
 // Tangkap tahun baru 2021
-const tahunBaru = input.value;
+// const tahunBaru = input.value;
 
 button.addEventListener('click', function(){
-  hitungMundur();
+  setTimeout(hitungMundur, 1000);
   setInterval(hitungMundur, 1000);
-  setTimeout(hitungMundur, 2000);
 });
 
 function hitungMundur() {
