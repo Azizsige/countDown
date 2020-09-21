@@ -11,7 +11,8 @@ const tahunBaru = input.value;
 
 button.addEventListener('click', function(){
   hitungMundur();
-  setTimeout(hitungMundur, 10000)
+  setInterval(hitungMundur, 1000);
+  setTimeout(hitungMundur, 2000);
 });
 
 function hitungMundur() {
@@ -24,7 +25,7 @@ function hitungMundur() {
 
   // Dapat Hari = milisecond diubuah ke hari
   const hari = Math.floor(distance / 3600 / 24);
-  const jam = Math.floor(distance / 3600 / 60) % 24;
+  const jam = Math.floor(distance / 3600 % 24);
   const menit = Math.floor(distance / 60) % 60;
   const detik = Math.floor(distance % 60);
 
