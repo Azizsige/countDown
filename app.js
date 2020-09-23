@@ -3,22 +3,25 @@ const Hari = document.getElementById('days');
 const Jam = document.getElementById('hours');
 const Menit = document.getElementById('minutes');
 const Detik = document.getElementById('seconds');
-const input = document.getElementById('input')
+const input = document.getElementById('input');
 const button = document.getElementById('button');
 
 // Tangkap tahun baru 2021
 // const tahunBaru = input.value;
 
+let time;
+
 button.addEventListener('click', function(){
-  setTimeout(hitungMundur, 1000);
-  setInterval(hitungMundur, 1000);
+  time = input.value;
+  setInterval(hitungMundur(time), 1000)
 });
 
-function hitungMundur() {
+
+function hitungMundur(time) {
   // tangkap tahun baru skrg
   const tahunBaruSekarang = new Date();
   // ubah format tahunBaru 
-  const newTahunBaru = new Date(input.value);
+  const newTahunBaru = new Date(time);
   // get jarak tgl tahun baru dengan tgl srkg dgn milisecond
   const distance = new Date(newTahunBaru - tahunBaruSekarang) / 1000;
 
@@ -42,8 +45,6 @@ function hitungMundur() {
   console.log(`Menit adalah : ${menit}`)
   console.log(`Detik adalah : ${detik}`)
 }
-
-// setInterval(hitungMundur, 1000)
 
 function format(num) {
   return num < 10 ? `0${num}` : num;
